@@ -1,0 +1,49 @@
+{% extends "_base_is_login.html" %}
+
+{% block content %}
+
+<div class="max-w-2xl px-4 mt-2 py-2 mx-auto lg:py-8 border border-gray-500 border-dashed rounded">
+   
+    <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white text-center">Create Post</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.errors}}
+
+        <input type="hidden" name="user" value="{{ user.pk}}" />
+        <input type="hidden" name="profile" value="{{ profile.pk }}" />
+
+        <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
+            <div class="sm:col-span-2">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.title.label}}</label>
+                {{form.title}}
+            </div>
+            <div class="sm:col-span-2">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.photo.label}}</label>
+                {{form.photo}}
+            </div>
+
+        </div>
+        <div class="sm:col-span-2 pb-4">
+            <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-center">{{form.description.label}}</label>
+            {{form.description}}
+        </div>
+        
+ 
+        <div class="flex items-center space-x-4 justify-center">
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Create
+            </button>
+            <a href="{% url 'post:index' %}" class="text-red-600 inline-flex items-center hover:text-red-700 border border-red-700 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                
+                Cancel
+            <a>
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}
+
+
+

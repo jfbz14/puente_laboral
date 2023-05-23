@@ -1,0 +1,114 @@
+{% extends "_base_is_login.html" %}
+
+{% block content %}
+    
+    
+    <div class="max-w-2xl px-4 py-2 mx-auto lg:py-8 border border-gray-500 border-dashed rounded">
+        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white text-center">Update Profile </h2>
+
+        <form  method="POST" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="id_profile" value="{{ request.user.profileuser.id }}" />
+            
+            <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
+                
+
+                <div class="w-full">
+                    <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+                    {% if username_errors %}                                    
+                    <span class='text-red-600 text-xs'>{{username_errors}}</span>
+                    {%endif%}
+                    <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{object.user.username}}" placeholder="Product brand" required="">
+                </div>
+                <div class="w-full">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                    {% if email_errors %}                                    
+                    <span class='text-red-600 text-xs'>{{email_errors}}</span>
+                    {%endif%}
+                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{object.user.email}}" placeholder="Product brand" required="">
+                </div>
+
+                <div class="w-full">
+                    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                    <input type="text" name="first_name" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{object.user.first_name}}" placeholder="Product brand" required="">
+                </div>
+
+                <div class="w-full">
+                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                    <input type="text" name="last_name" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{object.user.last_name}}" placeholder="Product brand" required="">
+                </div>
+
+                
+                
+
+                <div class="sm:col-span-2">
+                    <label for="document_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.document_type.label}}</label>
+                    {% if form.document_type.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.document_type.errors}}</span>
+                    {%endif%}
+                    {{form.document_type}}
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="document_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.document_number.label}}</label>
+                    {% if form.document_number.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.document_number.errors}}</span>
+                    {%endif%}
+                    {{form.document_number}}
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="picture" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.picture.label}}</label>
+                    {% if form.picture.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.picture.errors}}</span>
+                    {%endif%}
+                    {{form.picture}}
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.phone_number.label}}</label>
+                    {% if form.phone_number.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.phone_number.errors}}</span>
+                    {%endif%}
+                    {{form.phone_number}}
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.address.label}}</label>
+                    {% if form.address.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.address.errors}}</span>
+                    {%endif%}
+                    {{form.address}}
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.website.label}}</label>
+                    {% if form.website.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.website.errors}}</span>
+                    {%endif%}
+                    {{form.website}}
+                </div>
+
+            </div>
+
+            <div class="sm:col-span-2 pb-4">
+                <label for="biography" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.biography.label}}</label>
+                
+                {% if form.biography.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.biography.errors}}</span>
+                {%endif%}
+                {{form.biography}}
+            </div>
+
+            <div class="flex items-center space-x-4 justify-center">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Update
+                </button>
+                <a href="{% url 'post:index' %}" class="text-red-600 inline-flex items-center hover:text-red-700 border border-red-700 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                    Cancel
+                <a>
+            </div>
+
+        </form>
+
+    </div>
+
+{% endblock content %}

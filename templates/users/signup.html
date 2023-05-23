@@ -1,0 +1,124 @@
+{% extends "_base_home.html" %}
+{% load static %}
+
+{% block content_title %}
+Signup
+{% endblock content_title %}
+
+{% block content %}
+    
+    <section class="w-full max-w-lg mx-auto pt-8 mt-8">
+
+        <div class="flex flex-col items-center justify-center px-2 pt-8 pb-8 mx-auto md:h-screen">
+            
+            <a href="#" class="flex items-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
+                <img class="btn-toggle w-[24rem] hidden dark:block" 
+                src="{% static 'logo/logo_b.png' %}"
+                alt="logo">
+                <img class="btn-toggle w-24 dark:hidden" 
+                src="{% static 'logo/logo_c.png' %}"
+                alt="logo">
+            </a>  
+            
+            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    
+                    <h1 class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">                                                
+                       Sign up                        
+                    </h1>
+
+                    <form class="space-y-4 md:space-y-6" method="POST" action="{% url "users:signup" %}">
+                        {% csrf_token %}
+                
+                        <div>
+                            <label 
+                                for="first_name" 
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                
+                                {{form.first_name.label}}
+                                {% if form.first_name.errors %}                                    
+                                    <span class='text-red-600 text-xs'>{{form.first_name.errors}}</span>
+                                {%endif%}
+                            </label>
+                            {{form.first_name}}
+                        </div>
+                        <div>
+                            <label 
+                                for="last_name" 
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                
+                                {{form.last_name.label}}
+                                {% if form.last_name.errors %}                                    
+                                    <span class='text-red-600 text-xs'>{{form.last_name.errors}}</span>
+                                {%endif%}
+                            </label>
+                            {{form.last_name}}
+                        </div>
+                        <div>
+                            <label 
+                                for="username" 
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                
+                                {{form.username.label}}
+                                {% if form.username.errors %}                                    
+                                    <span class='text-red-600 text-xs'>{{form.username.errors}}</span>
+                                {%endif%}
+                            </label>
+                            {{form.username}}
+                        </div>
+                        <div>
+                            <label 
+                                for="email" 
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                
+                                {{form.email.label}}
+                                {% if form.email.errors %}                                    
+                                    <span class='text-red-600 text-xs'>{{form.email.errors}}</span>
+                                {%endif%}
+                            </label>
+                            {{form.email}}
+                        </div>
+                        <div>
+                            <label 
+                                for="password" 
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                
+                                {{form.password.label}}
+                                {% if form.password.errors %}                                    
+                                    <span class='text-red-600 text-xs'>{{form.password.errors}}</span>
+                                {%endif%}
+                            </label>
+                            {{form.password}}
+                        </div>
+                        <div>
+                            <label 
+                                for="password_confirmation" 
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                
+                                {{form.password_confirmation.label}}
+                                {% if form.first_name.errors %}                                    
+                                    <span class='text-red-600 text-xs'>{{form.password_confirmation.errors}}</span>
+                                {%endif%}
+                            </label>
+                            {{form.password_confirmation}}
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-ring-blue-300">
+                            Create an account
+                        </button>
+                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                            Already have an account? <a href="{% url 'users:login' %}" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Login here</a>
+                        </p>
+                    </form>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+
+{% endblock content %}
+
