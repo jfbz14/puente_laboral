@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-yellow-300 dark:border-yellow-300">
+<nav class="bg-white dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-yellow-400 dark:border-yellow-300">
 
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
 
@@ -11,7 +11,7 @@
             <img class="btn-toggle h-14 mr-3 dark:hidden" 
             src="{% static 'logo/logo_p_c.png' %}"
             alt="logo">
-            <span class="self-center text-xl whitespace-nowrap dark:text-blue-500">Puente Laboral</span>
+            <span class="self-center text-sm whitespace-nowrap dark:text-blue-500">Puente Laboral</span>
         </a>
         
         <div class="flex md:order-2 ">
@@ -42,7 +42,7 @@
                 <a href="{% url 'post:contact' %}" class="block pl-3 pr-4 my-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contáctanos</a>
                 </li>
                 <li>
-                <a href="{% url 'users:login' %}" class="block block text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm py-1 px-2 my-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ingresar</a>
+                <a href="{% url 'users:login' %}" class="block text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm py-1 px-2 my-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ingresar</a>
                 </li>
                 <li>
                 <a href="{% url 'users:signup' %}" class="block text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-md text-sm py-1 px-2 my-2 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Unirme</a>

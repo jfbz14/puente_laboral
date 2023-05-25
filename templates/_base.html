@@ -31,7 +31,7 @@
         
     </head>
     
-    <body class="bg-gray-50 dark:bg-gray-900">
+    <body class="bg-gray-10 dark:bg-gray-700">
 
         {% if request.user.is_anonymous %}
             {% include "nav_home.html" %}
@@ -39,9 +39,9 @@
             {% include "nav_login.html" %}
         {% endif %}    
                 
-        <main class="{% if request.user.is_anonymous %}pt-8 sm:pt-4 px-2 mt-8 {% else %}pt-8 px-2 mt-8 sm:ml-64 sm:pt-4 sm:mt-2{% endif %} ">
+        <main class="{% if request.user.is_anonymous %}p-2 {% else %}pt-8 px-2 mt-8 sm:ml-64 sm:pt-4 sm:mt-2{% endif %} ">
             
-            <div class="py-4 px-2 sm:px-16 border-gray-200 dark:border-gray-700">                
+            <div class="py-2 sm:px-8 border-gray-200 dark:border-gray-700">                
                 {% block content %}
                 {% endblock content %}
             </div>
