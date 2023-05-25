@@ -131,6 +131,6 @@ class ListDashboarUser(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(self.object)
         context["post"] = Post.objects.all().filter(user=self.object)
         return context
+    

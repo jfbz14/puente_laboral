@@ -24,4 +24,14 @@ urlpatterns = [
         view=views.CreatePostView.as_view(),
         name='new_post'
     ),
+    path(
+        route='contact',
+        view=views.ContactView.as_view(),
+        name='contact'
+    ),
+    path(
+        route='register',
+        view=views.RegisterBetaView.as_view(),
+        name='register'
+    ),
 ]
