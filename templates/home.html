@@ -9,7 +9,18 @@ PUENTE LABORAL
 
     <section class="pt-2 px-2">
 
-        <div class="gap-4 items-center mx-auto max-w-screen-xl xl:gap-8 md:grid md:grid-cols-2 mb-4 px-2 py-4 sm:py-8 lg:px-4 rounded-lg shadow-md shadow-green-500/50">
+        <div class="gap-4 items-center mx-auto max-w-screen-xl xl:gap-8 md:grid md:grid-cols-2 mb-4 px-0 py-4 sm:py-8 lg:px-4 ">
+
+            <div class="p-4">
+                <h1 class="mb-4 text-4xl tracking-tight font-bold text-blue-600 dark:text-blue-500">Encuentra tu oportunidad laboral</h1>
+                <p class="mb-6 font-light text-gray-700 md:text-lg dark:text-gray-100">
+                    En Puente Laboral, creemos que todas las personas tienen habilidades y conocimientos valiosos que merecen ser reconocidos y utilizados. Nos motiva reducir la brecha de desempleo en los barrios y comunidades, proporcionando oportunidades laborales para aquellos que no tienen títulos o certificados formales.
+                </p>
+                <a href="{% url 'post:register' %}" class="inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 mb-2 py-2.5 text-center dark:focus:ring-blue-900">
+                    Regístrate ahora
+                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
 
             <div id="gallery" class="relative w-full mb-4" data-carousel="slide">
                 <!-- Carousel wrapper -->
@@ -57,17 +68,6 @@ PUENTE LABORAL
                 </button>
             </div>
 
-            <div>
-                <h1 class="mb-4 text-4xl tracking-tight font-bold text-blue-600 dark:text-blue-500">Encuentra tu oportunidad laboral</h1>
-                <p class="mb-6 font-light text-gray-700 md:text-lg dark:text-gray-100">
-                    En Puente Laboral, creemos que todas las personas tienen habilidades y conocimientos valiosos que merecen ser reconocidos y utilizados. Nos motiva reducir la brecha de desempleo en los barrios y comunidades, proporcionando oportunidades laborales para aquellos que no tienen títulos o certificados formales.
-                </p>
-                <a href="{% url 'post:register' %}" class="inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-900">
-                    Regístrate ahora
-                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </a>
-            </div>
-            
         </div>
         
     </section>
@@ -83,9 +83,12 @@ PUENTE LABORAL
                     
                     <div class="p-5">
                         
-                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">Misión</h3>
+                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+                            Oportunidades laborales personalizadas
+                        </h3>
                         
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            Encuentra empleos que se adapten a tus habilidades y necesidades. No más envío de currículums sin respuesta. En Puente Laboral, nos aseguramos de que encuentres las oportunidades laborales adecuadas para ti.                        </p>
                         <a href="{% url 'post:register' %}" class="inline-flex text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                             Regístrate ahora
                             <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -99,9 +102,10 @@ PUENTE LABORAL
                     
                     <div class="p-5">
                         
-                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">Visión</h3>
+                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">Valoración de tu experiencia</h3>
                         
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            En nuestra plataforma, tu experiencia y conocimientos son lo más valioso. Destaca tus fortalezas y habilidades en tu perfil profesional para que los empleadores puedan reconocer tu verdadero potencial.                        </p>
                         <a href="{% url 'post:register' %}" class="inline-flex text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                             Regístrate ahora
                             <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
