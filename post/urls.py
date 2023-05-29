@@ -8,7 +8,6 @@ from . import views
 app_name = 'post'
 
 urlpatterns = [
-
     path(
         route='',
         view=views.Home.as_view(),
