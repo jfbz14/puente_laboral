@@ -15,6 +15,11 @@ urlpatterns = [
         name='home'
     ),
     path(
+        route='about/',
+        view=views.About.as_view(),
+        name='about'
+    ),
+    path(
         route='post',
         view=views.ListPosts.as_view(),
         name='index'

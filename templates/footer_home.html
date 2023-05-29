@@ -7,7 +7,7 @@
 
     <div id="gallery" class="relative w-full mb-4" data-carousel="slide">
         <!-- Carousel wrapper -->
-        <div class="relative h-56 overflow-hidden rounded-md md:h-96">
+        <div class="relative h-56 overflow-hidden md:h-96">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{% static 'logo/img1.webp' %}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
@@ -54,13 +54,13 @@
             </a>
             <ul class="flex flex-wrap items-center mb-6 mr-4 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
-                    <a href="{% url 'post:home' %}" class="mr-4 hover:underline md:mr-6 ">Acerca de</a>
+                    <a href="{% url 'post:home' %}" class="mr-4 hover:underline md:mr-6 ">Inicio</a>
                 </li>
                 <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">política de privacidad</a>
+                    <a href="{% url 'post:about' %}" class="mr-4 hover:underline md:mr-6">Acerca de</a>
                 </li>
                 <li>
-                    <a href="{% url 'post:register' %}" class="mr-4 hover:underline md:mr-6 ">Registro</a>
+                    <a href="{% url 'post:register' %}" class="mr-4 hover:underline md:mr-6 ">Regístrate</a>
                 </li>
                 <li>
                     <a href="{% url 'post:contact' %}" class="hover:underline">Contáctanos</a>

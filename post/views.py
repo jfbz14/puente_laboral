@@ -15,6 +15,12 @@ class Home(TemplateView):
     """Return home page"""
 
     template_name = 'home.html'
+    
+
+class About(TemplateView):
+    """Return about page"""
+
+    template_name = 'about.html'
 
 
 class ListPosts(LoginRequiredMixin, ListView):

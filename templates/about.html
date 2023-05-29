@@ -1,0 +1,225 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block content_title %}
+PUENTE LABORAL
+{% endblock content_title %}
+
+{% block content%}
+
+    <section class="pt-2 px-2">
+
+        <div class="gap-4 items-center mx-auto max-w-screen-xl xl:gap-8 md:grid md:grid-cols-2 mb-4 px-0 py-4 sm:py-8 lg:px-4 ">
+
+            <div class="p-4">
+
+                <h1 class="mb-4 text-4xl tracking-tight font-bold text-gray-800 dark:text-white">
+                    Facilitando la búsqueda de trabajo y contratación
+                </h1>
+                <p class="mb-6 font-light text-gray-700 md:text-lg dark:text-gray-100">
+                    En Puente Laboral, queremos que buscar trabajo y contratar personal sea más fácil y rápido. Nuestra página web te permite buscar oportunidades laborales de manera sencilla y conectarte directamente con empleadores interesados. Además, ofrecemos servicios de capacitación y educación para mejorar tus habilidades y aumentar tus posibilidades de conseguir empleo.
+                </p>
+                <a href="{% url 'post:register' %}" class="inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 mb-2 py-2.5 text-center dark:focus:ring-blue-900">
+                    Regístrate ahora
+                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+
+            </div>
+
+            <div id="gallery" class="relative w-full mb-4" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-56 overflow-hidden rounded-md md:h-96">
+                    <!-- Item 0 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <a href="{% static 'logo/logo_c_800.png' %}">
+                            <img class="w-full p-8 max-w-md dark:hidden mx-auto absolute block h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" src="https://guiatec.cloud/wp-content/uploads/2023/05/logo_c.webp" alt="dashboard image">
+                            <img class="w-full p-8  max-w-md hidden dark:block absolute h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" src="https://guiatec.cloud/wp-content/uploads/2023/05/logo_b.webp" alt="dashboard image"> 
+                        </a>
+                    </div>
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="{% static 'logo/img1.webp' %}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="{% static 'logo/img2.webp' %}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="{% static 'logo/img3.webp' %}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="{% static 'logo/img4.webp' %}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="{% static 'logo/img5.webp' %}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg aria-hidden="true" class="w-6 h-6 text-blue-600 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        <span class="sr-only">Anterior</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg aria-hidden="true" class="w-6 h-6 text-blue-600 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        <span class="sr-only">Sigueinte</span>
+                    </span>
+                </button>
+            </div>
+
+        </div>
+        
+    </section>
+
+    <section>
+        <div class="py-4 px-2 mx-auto max-w-screen-xl lg:py-8">
+            
+            <div class="grid md:grid-cols-2 gap-4">
+
+                <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-12">
+
+                    <p class="text-blue-800 px-2.5 py-0.5 dark:text-blue-600 mb-2">
+                        <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
+                        </svg>
+                    </p>
+                    <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
+                        Misión de Puente Laboral
+                    </h2>                    
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
+                        solucionar la problemática del desemple conectando a personas informales con habilidades y conocimientos valiosos con oportunidades laborales, fomentando la igualdad de oportunidades y el reconocimiento de su talento para impulsar el crecimiento personal y económico de individuos y comunidades.
+                    </p>                    
+                    <a href="{% url 'post:register' %}" class="inline-flex text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">
+                        Regístrate ahora
+                        <svg aria-hidden="true" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-12">
+                    
+                    <p class="text-green-800 px-2.5 py-0.5 dark:text-green-400 mb-2">
+                        
+                        <svg class="w-14 h-14"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                       
+                    </p>
+                    <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
+                        Visión de Puente Laboral
+                    </h2>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
+                        Ser la plataforma líder a nivel global que promueva la valoración de las habilidades y experiencia laboral por encima de los títulos formales, transformando la forma en que se busca y se accede al empleo, generando un impacto significativo en la reducción de la brecha de desempleo y el desarrollo socioeconómico de las comunidades.
+                    </p>
+                    
+                    <a href="{% url 'post:register' %}" class="inline-flex text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
+                        Regístrate ahora
+                        <svg aria-hidden="true" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section class="bg-white dark:bg-gray-800">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="max-w-screen-md mb-8 lg:mb-16 mx-auto">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">En Puente Laboral, valoramos el talento y te conectamos</h2>
+                <p class="text-gray-500 sm:text-xl dark:text-gray-400 text-justify">
+                    Nuestra plataforma actúa como un puente que conecta a personas informales con habilidades y conocimientos valiosos con empleadores que buscan talento diverso y capacitado. Creemos firmemente en la igualdad de oportunidades y en el reconocimiento del talento individual, ya que esto impulsa el crecimiento personal y económico tanto a nivel individual como en las comunidades.
+                </p>
+            </div>
+            <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
+                        <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z"></path>
+                          </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">
+                        Igualdad de oportunidades
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Creemos en la equidad y en brindar a todas las personas la posibilidad de destacar y acceder a oportunidades laborales basadas en sus habilidades y experiencia.
+                    </p>
+                </div>
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
+                        <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">
+                        Reconocimiento del talento
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Valoramos y promovemos la valoración de los conocimientos y habilidades de los profesionales informales, reconociendo su valía y contribución en el mundo laboral.
+                    </p>
+                </div>
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
+                        <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">
+                        Empoderamiento
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Buscamos empoderar a las personas informales, proporcionándoles las herramientas y recursos necesarios para que puedan alcanzar sus metas profesionales y mejorar su calidad de vida.
+                    </p>
+                </div>
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
+                        <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+                          </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">
+                        Transparencia
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Fomentamos la transparencia en nuestras acciones y procesos, garantizando la confianza tanto de los usuarios como de los empleadores.
+                    </p>
+                </div>
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
+                        <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path>
+                          </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">
+                        Colaboración
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Promovemos la colaboración y el trabajo en equipo, creando una comunidad inclusiva donde los profesionales informales puedan compartir conocimientos, experiencias y oportunidades.
+                    </p>
+                </div>
+                <div>
+                    <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-100 lg:h-12 lg:w-12 dark:bg-blue-900">
+                        <svg class="w-5 h-5 text-blue-600 lg:w-6 lg:h-6 dark:text-blue-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"></path>
+                        </svg>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">
+                        Innovación
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Buscamos constantemente nuevas formas de mejorar y adaptarnos a las necesidades cambiantes de nuestros usuarios y del mercado laboral, utilizando la tecnología y la creatividad para impulsar la transformación laboral.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+{% endblock content %}
