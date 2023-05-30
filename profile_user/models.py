@@ -47,8 +47,6 @@ class ModelDataBeta(models.Model):
         ('CC', 'CEDULA DE CIUDADANIA'),
         ('CE', 'CEDULA DE EXTRANJERIA'),
         ('PA', 'PASAPORTE'),
-        ('TI', 'TARJETA DE IDENTIDAD'),
-        ('IT', 'IDENTIFICACION TRIBUTARIA'),
         ('IP', 'IDENTIFICACION PERSONAL'),
     ] 
 
