@@ -26,7 +26,7 @@ class About(TemplateView):
 class ListPosts(LoginRequiredMixin, ListView):
     """Return all published posts."""
 
-    template_name = 'posts/index.html'
+    template_name = 'posts/home_login_post.html'
     model = Post
     ordering = ('-created',)
     context_object_name = 'posts'

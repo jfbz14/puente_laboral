@@ -21,8 +21,6 @@ DEBUG = env('DEBUG', default=False)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
-CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS')
-
 AUTH_USER_MODEL = 'profile_user.User'
 
 # Application definition
@@ -98,8 +96,8 @@ DATABASES = {
         default=env('DATABASE_URL')
     )
 }
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS')
 """
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -152,7 +150,7 @@ COMPRESS_ROOT = BASE_DIR / 'static'
 
 COMPRESS_ENABLED = env('COMPRESS_ENABLED')
 
-STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.AppDirectoriesFinder", 'compressor.finders.CompressorFinder',)
+STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.AppDirectoriesFinder",'compressor.finders.CompressorFinder',)
 
 # Login
 LOGIN_REDIRECT_URL = '/post'
