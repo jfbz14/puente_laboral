@@ -5,16 +5,16 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
 # Model
-from .models import Post
+from .models import Posts
 
 
 class PostResource(resources.ModelResource):
 
     class Meta:
-        model = Post
+        model = Posts
 
 
-@admin.register(Post)
+@admin.register(Posts)
 class PostAdmin(ImportExportModelAdmin):
     """Profile admin."""
 

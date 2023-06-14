@@ -2,19 +2,27 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, ListView, TemplateView, View, FormView
 from django.urls import reverse_lazy
 from django.core.mail import EmailMultiAlternatives
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.conf import settings
 
 # local
 from .forms import PostForm, DataBetaForm
-from .models import Post
+from .models import Posts
 
 
 class Home(TemplateView):
     """Return home page"""
 
     template_name = 'home.html'
+
+    def dispatch(self, request,*args, **kwargs):
+        """ user started, redirect to start """
+
+        if request.user.is_authenticated:
+            return redirect('post:list_booking_wait_gestion')
+            
+        return super().dispatch(request, *args, **kwargs)
     
 
 class About(TemplateView):
@@ -26,18 +34,18 @@ class About(TemplateView):
 class ListPosts(LoginRequiredMixin, ListView):
     """Return all published posts."""
 
-    template_name = 'posts/home_login_post.html'
-    model = Post
+    template_name = 'posts/home_login_posts.html'
+    model = Posts
     ordering = ('-created',)
     context_object_name = 'posts'
 
 
-class CreatePostView(LoginRequiredMixin, CreateView):
+class CreatePostsView(LoginRequiredMixin, CreateView):
     """Create a new post."""
 
-    template_name = 'posts/create_post.html'
+    template_name = 'posts/create_posts.html'
     form_class = PostForm
-    success_url = reverse_lazy('post:index')
+    success_url = reverse_lazy('posts:home_login_posts')
 
     def get_context_data(self, **kwargs):
         """Add user and profile to context."""
@@ -88,5 +96,5 @@ class RegisterBetaView(FormView):
         return super().form_valid(form)   
 
     def get_success_url(self):
-        url = "%s?register=register_valid" % reverse('post:register')
+        url = "%s?register=register_valid" % reverse('posts:register')
         return url 

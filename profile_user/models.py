@@ -11,7 +11,7 @@ def user_directory_path(instance, filename):
     return 'user_{0}/{1}'.format(instance.user.id, filename)
 
 
-class ProfileUser (models.Model):
+class ProfileUser(models.Model):
 
     DOCUMENT_TYPE_CHOICES = [
         ('CC', 'CEDULA DE CIUDADANIA'),

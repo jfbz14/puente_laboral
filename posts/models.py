@@ -2,7 +2,7 @@ from django.db import models
 from profile_user.models import User, ProfileUser
 
 
-class Post(models.Model):
+class Posts(models.Model):
     """Post model."""
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)

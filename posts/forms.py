@@ -2,7 +2,7 @@
 from django import forms
 
 # model
-from .models import Post
+from .models import Posts
 from profile_user.models import ModelDataBeta
 
 
@@ -12,7 +12,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         """Form settings."""
 
-        model = Post
+        model = Posts
         fields = ('user', 'profile', 'title', 'photo', 'description')
         widgets = {
             

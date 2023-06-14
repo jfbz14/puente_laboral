@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     # local
     'profile_user',
-    'post',
+    'posts',
 ]
 
 MIDDLEWARE = [

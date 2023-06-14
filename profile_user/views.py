@@ -1,9 +1,9 @@
 # Django
 from django.contrib.auth import views as auth_views
-from django.shortcuts import redirect, get_object_or_404, render
+from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import FormView, UpdateView, TemplateView, DetailView
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.contrib.auth.views import PasswordChangeView
@@ -11,7 +11,7 @@ from django.contrib.auth.views import PasswordChangeView
 # local
 from .forms import SignupFormUser, UpdateFormProfileUser
 from .models import ProfileUser, User
-from post.models import Post
+from posts.models import Posts
 
 
 class LoginView(auth_views.LoginView):
@@ -23,7 +23,7 @@ class LoginView(auth_views.LoginView):
         """ user started, redirect to start """
 
         if request.user.is_authenticated:
-            return redirect('post:index')
+            return redirect('posts:index')
             
         return super().dispatch(request, *args, **kwargs)
     
@@ -131,6 +131,6 @@ class ListDashboarUser(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["post"] = Post.objects.all().filter(user=self.object)
+        context["post"] = Posts.objects.all().filter(user=self.object)
         return context
     

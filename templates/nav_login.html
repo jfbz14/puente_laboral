@@ -5,7 +5,7 @@
     <div class="flex flex-wrap items-center justify-between px-2 sm:px-4">
         
         <div class="flex items-center justify-between">            
-            <a href="{% url 'post:index' %}" class="flex ml-2 md:mr-24">
+            <a href="{% url 'posts:home_login_posts' %}" class="flex ml-2 md:mr-24">
                 <img  class="h-10 mr-3 hidden dark:block" src="https://guiatec.cloud/wp-content/uploads/2023/05/logo_p_b.webp" alt="Logo">                    
                 <img class="mr-3 btn-toggle h-10 dark:hidden" src="https://guiatec.cloud/wp-content/uploads/2023/05/logo_p_c.webp" alt="Logo">
             </a>            
@@ -58,7 +58,7 @@
 
                     <div class="">
                         
-                        <a href="{% url 'post:new_post' %}" class="flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-500 dark:text-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 text-sm">
+                        <a href="{% url 'posts:new_posts' %}" class="flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-500 dark:text-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 text-sm">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" 
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" 

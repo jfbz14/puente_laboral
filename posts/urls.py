@@ -5,7 +5,7 @@ from django.urls import path
 from . import views
 
 
-app_name = 'post'
+app_name = 'posts'
 
 urlpatterns = [
     path(
@@ -21,12 +21,12 @@ urlpatterns = [
     path(
         route='post',
         view=views.ListPosts.as_view(),
-        name='index'
+        name='home_login_posts'
     ),
     path(
-        route='create/new/post/',
-        view=views.CreatePostView.as_view(),
-        name='new_post'
+        route='create/new/posts/',
+        view=views.CreatePostsView.as_view(),
+        name='new_posts'
     ),
     path(
         route='contact',
