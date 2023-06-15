@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.conf import settings
 
 # local
-from .forms import PostForm, DataBetaForm
+from .forms import PostsFormCreate, DataBetaForm
 from .models import Posts
 
 
@@ -20,7 +20,7 @@ class Home(TemplateView):
         """ user started, redirect to start """
 
         if request.user.is_authenticated:
-            return redirect('post:list_booking_wait_gestion')
+            return redirect('posts:home_login_posts')
             
         return super().dispatch(request, *args, **kwargs)
     
@@ -44,15 +44,8 @@ class CreatePostsView(LoginRequiredMixin, CreateView):
     """Create a new post."""
 
     template_name = 'posts/create_posts.html'
-    form_class = PostForm
+    form_class = PostsFormCreate
     success_url = reverse_lazy('posts:home_login_posts')
-
-    def get_context_data(self, **kwargs):
-        """Add user and profile to context."""
-        context = super().get_context_data(**kwargs)
-        context['user'] = self.request.user
-        context['profile'] = self.request.user.profileuser
-        return context
 
 
 class ContactView(View):

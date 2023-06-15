@@ -8,9 +8,9 @@ class Posts(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     profile = models.ForeignKey(ProfileUser, on_delete=models.CASCADE)
 
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=75)
     photo = models.ImageField(upload_to='posts/photos')
-    description = models.TextField(max_length=500, blank=True)
+    description = models.TextField(max_length=300, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)

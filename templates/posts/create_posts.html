@@ -1,46 +1,45 @@
 {% extends "_base.html" %}
 
 {% block content %}
+<div class="p-2">    
+    <div class="max-w-2xl p-4 my-2 mx-auto bg-white dark:bg-gray-800 rounded shadow-lg">
+    
+        <h2 class="mb-2 text-xl font-bold text-gray-900 dark:text-white text-center">Create New Posts</h2>
 
-<div class="max-w-2xl px-4 mt-2 py-2 mx-auto lg:py-8 border border-gray-500 border-dashed rounded">
-   
-    <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white text-center">Create Post</h2>
-
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{form.errors}}
-
-        <input type="hidden" name="user" value="{{ user.pk}}" />
-        <input type="hidden" name="profile" value="{{ profile.pk }}" />
-
-        <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
-            <div class="sm:col-span-2">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            {% if form.errors %}                                    
+                <span class='text-red-600 text-xs'>{{form.errors}}</span>
+            {%endif%}
+            
+            <input type="hidden" name="user" value="{{ request.user.id}}" />
+            <input type="hidden" name="profile" value="{{ request.user.profileuser.id }}" />
+            
+            <div class="mb-2">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.title.label}}</label>
                 {{form.title}}
             </div>
-            <div class="sm:col-span-2">
+            <div class="mb-2">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.photo.label}}</label>
                 {{form.photo}}
+            </div>        
+            <div class="mb-2">
+                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.description.label}}</label>
+                {{form.description}}
+            </div>        
+    
+            <div class="flex items-center space-x-4 justify-center">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Create
+                </button>
+                <a href="{% url 'posts:home_login_posts' %}" class="text-white inline-flex items-center border border-red-700 bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:hover:bg-red-800 dark:focus:ring-red-900"> 
+                    Cancel
+                <a>
             </div>
+        </form>
 
-        </div>
-        <div class="sm:col-span-2 pb-4">
-            <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-center">{{form.description.label}}</label>
-            {{form.description}}
-        </div>
-        
- 
-        <div class="flex items-center space-x-4 justify-center">
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Create
-            </button>
-            <a href="{% url 'posts:home_login_posts' %}" class="text-red-600 inline-flex items-center hover:text-red-700 border border-red-700 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
-                
-                Cancel
-            <a>
-        </div>
-    </form>
-
+    </div>
 </div>
 
 {% endblock content %}
