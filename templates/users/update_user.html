@@ -1,9 +1,9 @@
 {% extends "_base.html" %}
 
 {% block content %}
+<div class="p-2">  
     
-    
-    <div class="max-w-2xl px-4 py-2 mx-auto lg:py-8 border border-gray-500 border-dashed rounded">
+    <div class="max-w-2xl p-4 my-2 mx-auto bg-white dark:bg-gray-800 rounded shadow-lg">
         <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white text-center">Update Profile </h2>
 
         <form  method="POST" action="#" enctype="multipart/form-data">
@@ -18,28 +18,25 @@
                     {% if username_errors %}                                    
                     <span class='text-red-600 text-xs'>{{username_errors}}</span>
                     {%endif%}
-                    <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{object.user.username}}" placeholder="Product brand" required="">
+                    <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{object.user.username}}" placeholder="Product brand" required="">
                 </div>
                 <div class="w-full">
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                     {% if email_errors %}                                    
                     <span class='text-red-600 text-xs'>{{email_errors}}</span>
                     {%endif%}
-                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{object.user.email}}" placeholder="Product brand" required="">
+                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{object.user.email}}" placeholder="Product brand" required="">
                 </div>
 
                 <div class="w-full">
                     <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
-                    <input type="text" name="first_name" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{object.user.first_name}}" placeholder="Product brand" required="">
+                    <input type="text" name="first_name" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{object.user.first_name}}" placeholder="Product brand" required="">
                 </div>
 
                 <div class="w-full">
                     <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
-                    <input type="text" name="last_name" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{object.user.last_name}}" placeholder="Product brand" required="">
+                    <input type="text" name="last_name" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{object.user.last_name}}" placeholder="Product brand" required="">
                 </div>
-
-                
-                
 
                 <div class="sm:col-span-2">
                     <label for="document_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.document_type.label}}</label>
@@ -55,6 +52,7 @@
                     {%endif%}
                     {{form.document_number}}
                 </div>
+                <!-- 
                 <div class="sm:col-span-2">
                     <label for="picture" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.picture.label}}</label>
                     {% if form.picture.errors %}                                    
@@ -62,8 +60,22 @@
                     {%endif%}
                     {{form.picture}}
                 </div>
+                -->
+                <div class="w-full">
+                    <label for="picture" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.picture.label}}</label>
+                    {% if form.picture.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.picture.errors}}</span>
+                    {%endif%}
+                    <label for="dropzone-file" class="block w-full pl-2 bg-gray-50 border border-gray-300 cursor-pointer text-gray-900 rounded-lg  dark:bg-gray-700 dark:border-gray-600">
+                        <div class="flex flex-wrap py-2">
+                            <svg aria-hidden="true" class="w-6 h-6 mr-2 text-blue-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                            <p class="text-sm text-gray-700 dark:text-gray-200"><span class="font-semibold">Click to upload</span> (MAX. 400x400px)</p>
+                        </div>
+                        <input id="dropzone-file" type="file" name="picture" class="hidden" />
+                    </label>
+                </div>
 
-                <div class="sm:col-span-2">
+                <div class="w-full">                    
                     <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.phone_number.label}}</label>
                     {% if form.phone_number.errors %}                                    
                     <span class='text-red-600 text-xs'>{{form.phone_number.errors}}</span>
@@ -110,5 +122,6 @@
         </form>
 
     </div>
+</div>
 
 {% endblock content %}

@@ -1,7 +1,7 @@
 {% extends "_base.html" %}
 
 {% block content %}
-    <div class="mt-4 px-2">
+    <div class="mt-4 px-1">
 
         {% for post in posts %}
             
@@ -32,7 +32,7 @@
 
                 {% if request.user.username == post.user.username %}
                 <div class="mr-4">
-                    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex p-1 text-sm font-medium text-center text-blue-600 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button"> 
+                    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex p-1 text-sm font-medium text-center text-blue-600 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button"> 
                         <svg class="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
                         
                     </button>                        
@@ -52,8 +52,8 @@
 
             </div> 
 
-            <div class="px-2">                
-                <img class="mx-auto max-w-lg max-h-screen rounded-sm shadow-lg" src="{{ post.photo.url }}" alt=""/>                
+            <div class="px-1">                
+                <img class="mx-auto w-full max-w-lg rounded-sm shadow-lg" src="{{ post.photo.url }}" alt=""/>                
             </div>
             <div class="px-4 pb-4">  
                 <div class="flex justify-between pb-2">  

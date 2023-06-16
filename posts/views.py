@@ -30,6 +30,14 @@ class About(TemplateView):
 
     template_name = 'about.html'
 
+    def dispatch(self, request,*args, **kwargs):
+        """ user started, redirect to start """
+
+        if request.user.is_authenticated:
+            return redirect('posts:home_login_posts')
+            
+        return super().dispatch(request, *args, **kwargs)
+
 
 class ListPosts(LoginRequiredMixin, ListView):
     """Return all published posts."""
@@ -50,6 +58,14 @@ class CreatePostsView(LoginRequiredMixin, CreateView):
 
 class ContactView(View):
     """view to send form mail"""
+
+    def dispatch(self, request,*args, **kwargs):
+        """ user started, redirect to start """
+
+        if request.user.is_authenticated:
+            return redirect('posts:home_login_posts')
+            
+        return super().dispatch(request, *args, **kwargs)
            
     def get(self, request, *args, **kwargs):
         
@@ -82,6 +98,14 @@ class RegisterBetaView(FormView):
 
     template_name = 'users/data_beta.html'
     form_class = DataBetaForm
+
+    def dispatch(self, request,*args, **kwargs):
+        """ user started, redirect to start """
+
+        if request.user.is_authenticated:
+            return redirect('posts:home_login_posts')
+            
+        return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
         """Save form data."""

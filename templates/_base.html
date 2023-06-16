@@ -39,7 +39,7 @@
         {% else %}    
             {% include "nav_login.html" %}
         {% endif %}    
-                
+        
         <main class="{% if request.user.is_anonymous %}p-2{% else %}pt-8 mt-8 sm:ml-64{% endif %}">
             
             <div class="{% if request.user.is_anonymous %}py-2{% else %}pt-4 mt-4{% endif %}border-gray-200 dark:border-gray-700">                
