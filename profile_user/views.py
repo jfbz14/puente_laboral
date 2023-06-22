@@ -3,13 +3,13 @@ from django.contrib.auth import views as auth_views
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import FormView, UpdateView, TemplateView, DetailView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.contrib.auth.views import PasswordChangeView
 
 # local
-from .forms import SignupFormUser, UpdateFormProfileUser
+from .forms import UpdateFormProfileUser, CreateSigupForm
 from .models import ProfileUser, User
 from posts.models import Posts
 
@@ -32,7 +32,7 @@ class SignupView(FormView):
     """User signup view."""
 
     template_name = 'users/signup.html'
-    form_class = SignupFormUser
+    form_class = CreateSigupForm
     success_url = reverse_lazy('users:login')
 
     def dispatch(self, request,*args, **kwargs):
@@ -61,7 +61,6 @@ class UpdateProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'users/update_user.html'
     form_class = UpdateFormProfileUser
     model = ProfileUser
-    success_url = reverse_lazy('users:success')
 
     def get_object(self):
         """Return user's profile."""
@@ -76,27 +75,26 @@ class UpdateProfileView(LoginRequiredMixin, UpdateView):
         email = self.request.POST['email']
 
         try:
-            """Check if it is email."""
+            #Check if it is email.
             validate_email(email)
         except ValidationError:
-            self.extra_context = {'email_errors': 'Email ({}) is invalid.'.format(email)}
-            return super().form_invalid(form) 
+            self.extra_context = {'email_errors': 'Correo ({}) invalido.'.format(email)}
+            return super().form_invalid(form)
                 
         if firts_name and last_name and email and username:
-            print(firts_name, last_name, email, username)
             id = self.object.user.id
             user = get_object_or_404(User, id=id)
 
             valid_email = User.objects.filter(email=email).exclude(id=user.pk).exists()
             if valid_email == True:
                 """Email or username must be unique."""
-                self.extra_context = {'email_errors': 'Email ({}) is already in use.'.format(email)}
+                self.extra_context = {'email_errors': 'El correo ({}) ya se encuentra en uso.'.format(email)}
                 return super().form_invalid(form) 
             
             valid_username = User.objects.filter(username=username).exclude(id=user.pk).exists()
             if valid_username == True:
                 """Email or username must be unique."""
-                self.extra_context = {'username_errors': 'Username ({}) is already in use.'.format(username)}
+                self.extra_context = {'username_errors': 'El usuario ({}) ya se encuentra en uso.'.format(username)}
                 return super().form_invalid(form) 
 
             user.username = username
@@ -108,18 +106,17 @@ class UpdateProfileView(LoginRequiredMixin, UpdateView):
             return super().form_valid(form)
         return super().form_invalid(form)
     
+    def get_success_url(self):
+        url = "%s?update=valid" % reverse('users:update_user')
+        return url
+    
 
 class UserPasswordChangeView(LoginRequiredMixin, PasswordChangeView):
     """ Change password"""
 
     template_name = 'users/password_change.html'
     success_url = reverse_lazy('users:index')
-
-
-class SuccessUpdateUser(TemplateView):
-
-    template_name = "users/success.html"    
-
+ 
 
 class ListDashboarUser(LoginRequiredMixin, DetailView):
 

@@ -35,11 +35,6 @@ urlpatterns = [
         name='change_password'
     ),
     path(
-        route='success/update/user/',
-        view=views.SuccessUpdateUser.as_view(),
-        name='success'
-    ),
-    path(
         route='dashboard/user/<int:pk>/',
         view=views.ListDashboarUser.as_view(),
         name='dashboard_user'
