@@ -75,7 +75,7 @@ class UpdateFormProfileUser(forms.ModelForm):
             form.field.widget.attrs['class'] = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
         self.fields['picture'].widget.attrs['class'] = 'block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400'
         self.fields['biography'].widget.attrs['placeholder'] = 'Escribe una descripción aquí....'
-    
+
     class Meta:
 
         model = ProfileUser
@@ -109,3 +109,5 @@ class UpdateFormProfileUser(forms.ModelForm):
         if phone_number_taken:
             raise forms.ValidationError('Phone number is already in use.')
         return phone_number 
+
+

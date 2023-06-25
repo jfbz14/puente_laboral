@@ -46,7 +46,7 @@ class ListPosts(LoginRequiredMixin, ListView):
     model = Posts
     ordering = ('-created',)
     context_object_name = 'posts'
-
+    
 
 class CreatePostsView(LoginRequiredMixin, CreateView):
     """Create a new post."""

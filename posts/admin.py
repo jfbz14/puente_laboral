@@ -19,7 +19,7 @@ class PostAdmin(ImportExportModelAdmin):
     """Profile admin."""
 
     resource_class = PostResource
-    list_display = ('pk', 'user', 'title', 'photo')
+    list_display = ('pk', 'user', 'title', 'media_file')
     list_display_links = ('pk', 'user',)
 
     search_fields = (

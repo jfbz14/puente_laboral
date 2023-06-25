@@ -7,7 +7,6 @@
                             
         <figcaption class="flex items-center justify-center space-x-4 pt-2">
             <img class="rounded w-10 h-10" src="{{ user.profileuser.picture.url }}" alt="profile picture">
-
             
             <div class="space-y-0.5 font-medium dark:text-white text-left">
                 <div>{{ user.get_full_name }}</div>
@@ -54,7 +53,7 @@
                                 <h3 class="font-bold tracking-tight text-gray-900 dark:text-white text-center">
                                     {{post.title|title}}
                                 </h3>
-                                <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="{{post.photo.url}}" alt="Bonnie Avatar">
+                                <img class="w-full max-w-screen-sm rounded-lg sm:rounded-none sm:rounded-l-lg" src="{{post.media_file.url}}" alt="Bonnie Avatar">
                             </a>
                                                         
                         </div>  

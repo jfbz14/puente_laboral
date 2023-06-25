@@ -9,23 +9,28 @@
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             
-            {% if form.errors %}                                    
-                <span class='text-red-600 text-xs'>{{form.errors}}</span>
-            {%endif%}
-            
             <input type="hidden" name="user" value="{{ request.user.id}}" />
             <input type="hidden" name="profile" value="{{ request.user.profileuser.id }}" />
             
             <div class="mb-2">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.title.label}}</label>
+                {% if form.title.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.title.errors}}</span>
+                {%endif%}
                 {{form.title}}
             </div>
             <div class="mb-2">
-                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.photo.label}}</label>
-                {{form.photo}}
+                <label for="media_file" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.media_file.label}}</label>
+                {% if form.media_file.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.media_file.errors}}</span>
+                {%endif%}
+                {{form.media_file}}
             </div>        
             <div class="mb-2">
                 <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.description.label}}</label>
+                {% if form.description.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.description.errors}}</span>
+                {%endif%}
                 {{form.description}}
             </div>        
     
