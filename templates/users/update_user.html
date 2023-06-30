@@ -20,6 +20,7 @@
                     {%endif%}
                     <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{object.user.username}}" placeholder="Product brand" required="">
                 </div>
+
                 <div class="w-full">
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo electrónico</label>
                     {% if email_errors %}                                    
@@ -38,7 +39,7 @@
                     <input type="text" name="last_name" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{object.user.last_name}}" placeholder="Product brand" required="">
                 </div>
 
-                <div class="sm:col-span-2">
+                <div class="w-fll">
                     <label for="document_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.document_type.label}}</label>
                     {% if form.document_type.errors %}                                    
                     <span class='text-red-600 text-xs'>{{form.document_type.errors}}</span>
@@ -46,7 +47,7 @@
                     {{form.document_type}}
                 </div>
 
-                <div class="sm:col-span-2">
+                <div class="w-full">
                     <label for="document_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.document_number.label}}</label>
                     {% if form.document_number.errors %}                                    
                     <span class='text-red-600 text-xs'>{{form.document_number.errors}}</span>
@@ -61,7 +62,16 @@
                         {%endif%}
                     </label>
                     {{form.picture}}
-                </div>               
+                </div>       
+
+                <div class="w-full">
+                    <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.website.label}}
+                        {% if form.website.errors %}                                    
+                        <span class='text-red-600 text-xs'>{{form.website.errors}}</span>
+                        {%endif%}
+                    </label>
+                    {{form.website}}
+                </div>        
 
                 <div class="w-full">                    
                     <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.phone_number.label}}</label>
@@ -87,14 +97,6 @@
                     {{form.address}}
                 </div>
 
-                <div class="sm:col-span-2">
-                    <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.website.label}}
-                        {% if form.website.errors %}                                    
-                        <span class='text-red-600 text-xs'>{{form.website.errors}}</span>
-                        {%endif%}
-                    </label>
-                    {{form.website}}
-                </div>
             </div>
 
             <div class="sm:col-span-2 pb-4">
