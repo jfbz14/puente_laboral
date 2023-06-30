@@ -15,13 +15,12 @@ class PostsFormCreate(forms.ModelForm):
             form.field.widget.attrs['class'] = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
         self.fields['media_file'].widget.attrs['class'] = 'block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400'
         self.fields['media_file'].widget.attrs['accept'] = 'image/png, .jpeg, .jpg, image/gif, .f4v, .MOV,.avi, .mp4, .webm, .mkv, .f4v'
-        self.fields['description'].widget.attrs['placeholder'] = 'Escribe una descripción aquí....'
 
     class Meta:
         """Form settings."""       
 
         model = Posts
-        fields = ('user', 'profile', 'title', 'media_file', 'description')         
+        fields = ('user', 'title', 'media_file', 'description')         
 
 
 class DataBetaForm(forms.ModelForm):
@@ -51,5 +50,3 @@ class DataBetaForm(forms.ModelForm):
             'neighborhood' : forms.TextInput(), 
             'occupation' : forms.Textarea(),
         }
-
-

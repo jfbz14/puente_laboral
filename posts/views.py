@@ -5,7 +5,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.conf import settings
-
+from django.utils.translation import gettext as _
 # local
 from .forms import PostsFormCreate, DataBetaForm
 from .models import Posts

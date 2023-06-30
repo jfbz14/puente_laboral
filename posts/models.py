@@ -2,7 +2,7 @@ from django.db import models
 from django.core.validators import FileExtensionValidator
 from pathlib import Path            
 from profile_user.models import User, ProfileUser
-
+from django.utils.translation import gettext_lazy as _
 
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
@@ -20,14 +20,13 @@ class Posts(models.Model):
         ('image', 'image'),
         ('video', 'video'),
     ]
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    profile = models.ForeignKey(ProfileUser, on_delete=models.CASCADE)
-    title = models.CharField(max_length=75)
-    media_file = models.FileField(verbose_name='Archivo', upload_to=user_directory_path, validators=[FileExtensionValidator(allowed_extensions=EXT_FILE_VALID)], null=True, blank=True)
-    type_media = models.CharField(max_length=15,choices=CHOICE_TYPE_MEDIA, default='video')
-    description = models.TextField(max_length=300, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, verbose_name=_('user'), on_delete=models.CASCADE, related_name=_('posts'))
+    title = models.CharField(_('title'), max_length=75)
+    media_file = models.FileField(_("media file"), upload_to=user_directory_path, validators=[FileExtensionValidator(allowed_extensions=EXT_FILE_VALID)], null=True, blank=True)
+    type_media = models.CharField(_('type media'), max_length=15,choices=CHOICE_TYPE_MEDIA, default='video')
+    description = models.TextField(_("description"), max_length=300, blank=True)
+    created = models.DateTimeField(_('created'), auto_now_add=True)
+    modified = models.DateTimeField(_('modified'), auto_now=True)
 
     def __str__(self):
         """Return title and username."""

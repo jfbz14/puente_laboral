@@ -68,7 +68,15 @@
                     {% if form.phone_number.errors %}                                    
                     <span class='text-red-600 text-xs'>{{form.phone_number.errors}}</span>
                     {%endif%}
-                    {{form.phone_number}}
+                    {{form.phone_number.subwidgets.0}}
+                </div>
+                
+                <div class="w-full">                    
+                    <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.phone_number.label}}</label>
+                    {% if form.phone_number.errors %}                                    
+                    <span class='text-red-600 text-xs'>{{form.phone_number.errors}}</span>
+                    {%endif%}
+                    {{form.phone_number.subwidgets.1}}
                 </div>
 
                 <div class="sm:col-span-2">

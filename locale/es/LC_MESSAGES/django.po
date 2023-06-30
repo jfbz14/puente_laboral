@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-29 19:25-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\posts\models.py:23 .\profile_user\models.py:26
+msgid "user"
+msgstr "usuario"
+
+#: .\posts\models.py:23
+msgid "posts"
+msgstr "publicaciones"
+
+#: .\posts\models.py:24
+msgid "title"
+msgstr "titulo"
+
+#: .\posts\models.py:25
+msgid "media file"
+msgstr "archivo multimedia"
+
+#: .\posts\models.py:26
+msgid "type media"
+msgstr "tipo de archivo"
+
+#: .\posts\models.py:27 .\profile_user\models.py:55
+msgid "description"
+msgstr "descripción"
+
+#: .\posts\models.py:28
+msgid "created"
+msgstr "creado"
+
+#: .\posts\models.py:29
+msgid "modified"
+msgstr "modificado"
+
+#: .\profile_user\models.py:9
+msgid "email"
+msgstr "correo electrónico"
+
+#: .\profile_user\models.py:21
+msgid "identification document"
+msgstr "documento personal"
+
+#: .\profile_user\models.py:22
+msgid "foreigner id"
+msgstr "documento extranjero"
+
+#: .\profile_user\models.py:23
+msgid "passsport"
+msgstr "pasaporte"
+
+#: .\profile_user\models.py:27
+msgid "document type"
+msgstr "tipo de documento"
+
+#: .\profile_user\models.py:28
+msgid "document number"
+msgstr "numero de documento"
+
+#: .\profile_user\models.py:29
+msgid "image profile"
+msgstr "imagen de perfil"
+
+#: .\profile_user\models.py:30
+msgid "phone number"
+msgstr "numero de telefono"
+
+#: .\profile_user\models.py:31
+msgid "address"
+msgstr "dirección"
+
+#: .\profile_user\models.py:32
+msgid "website"
+msgstr "sitio web"
+
+#: .\profile_user\models.py:33
+msgid "biography"
+msgstr "biografia"
+
+#: .\profile_user\models.py:34
+msgid "validated"
+msgstr "valido"
+
+#: .\profile_user\models.py:47 .\profile_user\models.py:53
+msgid "name category"
+msgstr "nombre de categoria"
+
+#: .\profile_user\models.py:54
+msgid "title service"
+msgstr "titulo de servicio"
+
+#: .\templates\nav_login.html:19
+msgid "labor bridge"
+msgstr "puente laboral"
+
+#: .\templates\nav_login.html:27 .\templates\nav_login.html:109
+msgid "service"
+msgstr "servicio"
+
+#: .\templates\nav_login.html:28 .\templates\nav_login.html:86
+#: .\templates\nav_login.html:110
+msgid "profile"
+msgstr "perfil"
+
+#: .\templates\nav_login.html:71
+msgid "add post"
+msgstr "crear publicacion"
+
+#: .\templates\nav_login.html:77
+msgid "theme"
+msgstr "tema"
+
+#: .\templates\nav_login.html:83
+msgid "dashboard"
+msgstr "panel"
+
+#: .\templates\nav_login.html:89
+msgid "change password"
+msgstr "cambiar contraseña"
+
+#: .\templates\nav_login.html:92
+msgid "sign out"
+msgstr "salir"
+
+#: .\templates\posts\create_posts.html:9
+msgid "create new posts"
+msgstr "crear publicación"
+
+#: .\templates\posts\create_posts.html:40
+msgid "create"
+msgstr "crear"
+
+#: .\templates\posts\create_posts.html:43
+msgid "cancel"
+msgstr "cancelar"
+
+#: .\templates\posts\home_login_posts.html:45
+msgid "edit"
+msgstr "editar"
+
+#: .\templates\posts\home_login_posts.html:48
+msgid "delete"
+msgstr "eliminar"

@@ -1,9 +1,15 @@
-# Django
+#django
 from django import forms
-
-# model 
+from phonenumber_field.widgets import PhoneNumberPrefixWidget
 from .models import User, ProfileUser
 
+
+class CustomPhoneNumberPrefixWidget(PhoneNumberPrefixWidget):
+   
+    def subwidgets(self, name, value, attrs=None):
+        context = self.get_context(name, value, attrs)
+        return context['widget']['subwidgets']
+    
 
 class CreateSigupForm(forms.ModelForm):
     """ form model update profile. """
@@ -84,7 +90,7 @@ class UpdateFormProfileUser(forms.ModelForm):
             'picture' : forms.FileInput(),
             'document_type' : forms.Select(),
             'document_number' : forms.NumberInput(),
-            'phone_number' : forms.NumberInput(),
+            'phone_number' : CustomPhoneNumberPrefixWidget(initial='CO'),
             'address' : forms.TextInput(),
             'website' : forms.TextInput(),
             'biography' : forms.Textarea(),

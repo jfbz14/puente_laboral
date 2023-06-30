@@ -1,16 +1,18 @@
 {% extends "_base.html" %}
+{% load i18n %}
 
 {% block content %}
+
     <div class="mt-4 px-1">
 
         {% for post in posts %}
             
-        <div class="max-w-xl mx-auto mb-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-lg mx-auto mb-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div class="flex items-center justify-between py-2 rounded-t-lg border-t bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700"> 
 
                 <div class="flex items-center ml-4">
                     <a href="{% url 'users:dashboard_user' post.user.pk %} " class="inline-flex p-1 text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-2 focus:outline-none dark:text-white focus:ring-yellow-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-yellow-300">
-                        <img class="rounded w-10 h-10" src="{{ post.profile.picture.url }}" alt="profile picture">                        
+                        <img class="rounded w-10 h-10" src="{{ post.user.profileuser.picture.url }}" alt="profile picture">                        
                     </a>
                     <div class="dark:text-white ml-4 text-left">
                         <div class="text-sm font-medium pt-2">
@@ -40,10 +42,10 @@
                     <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-28 dark:bg-gray-700 dark:divide-gray-600">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
                             <li>
-                            <a href="#" class="block px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                            <a href="#" class="block px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{% trans 'edit'|title %}</a>
                             </li>
                             <li>
-                            <a href="#" class="block px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
+                            <a href="#" class="block px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{% trans 'delete'|title %}</a>
                             </li>
                         </ul>
                     </div>
@@ -52,9 +54,9 @@
 
             </div> 
 
-            <div class="px-1">  
+            <div class="px-0">  
                 {% if post.type_media == 'image' %}              
-                    <img class="mx-auto w-full max-w-lg rounded-sm shadow-lg" src="{{ post.media_file.url }}" alt=""/> 
+                    <img class="mx-auto w-full max-w-lg max-h-screen rounded-sm shadow-lg" src="{{ post.media_file.url }}" alt=""/> 
                 {% elif post.type_media == 'video' %}
                     <video class="mx-auto w-full max-w-lg max-h-screen rounded-sm shadow-lg" autoplay muted controls>
                         <source src="{{ post.media_file.url }}" type="video/mp4">

@@ -1,50 +1,51 @@
 {% extends "_base.html" %}
+{% load i18n %}
 
 {% block content %}
-<div class="p-2">    
-    <div class="max-w-2xl p-4 my-2 mx-auto bg-white dark:bg-gray-800 rounded shadow-lg">
-    
-        <h2 class="mb-2 text-xl font-bold text-gray-900 dark:text-white text-center">Create New Posts</h2>
 
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            
-            <input type="hidden" name="user" value="{{ request.user.id}}" />
-            <input type="hidden" name="profile" value="{{ request.user.profileuser.id }}" />
-            
-            <div class="mb-2">
-                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.title.label}}</label>
-                {% if form.title.errors %}                                    
-                    <span class='text-red-600 text-xs'>{{form.title.errors}}</span>
-                {%endif%}
-                {{form.title}}
-            </div>
-            <div class="mb-2">
-                <label for="media_file" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.media_file.label}}</label>
-                {% if form.media_file.errors %}                                    
-                    <span class='text-red-600 text-xs'>{{form.media_file.errors}}</span>
-                {%endif%}
-                {{form.media_file}}
-            </div>        
-            <div class="mb-2">
-                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.description.label}}</label>
-                {% if form.description.errors %}                                    
-                    <span class='text-red-600 text-xs'>{{form.description.errors}}</span>
-                {%endif%}
-                {{form.description}}
-            </div>        
-    
-            <div class="flex items-center space-x-4 justify-center">
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Create
-                </button>
-                <a href="{% url 'posts:home_login_posts' %}" class="text-white inline-flex items-center border border-red-700 bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:hover:bg-red-800 dark:focus:ring-red-900"> 
-                    Cancel
-                <a>
-            </div>
-        </form>
+    <div class="p-2">    
+        <div class="max-w-2xl p-4 my-2 mx-auto bg-white dark:bg-gray-800 rounded shadow-lg">
+        
+            <h2 class="mb-2 text-xl font-bold text-gray-900 dark:text-white text-center">{% trans 'create new posts'|title %}</h2>
 
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <input type="hidden" name="user" value="{{ request.user.id}}" />
+                
+                <div class="mb-2">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.title.label}}</label>
+                    {% if form.title.errors %}                                    
+                        <span class='text-red-600 text-xs'>{{form.title.errors}}</span>
+                    {%endif%}
+                    {{form.title}}
+                </div>
+                <div class="mb-2">
+                    <label for="media_file" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.media_file.label}}</label>
+                    {% if form.media_file.errors %}                                    
+                        <span class='text-red-600 text-xs'>{{form.media_file.errors}}</span>
+                    {%endif%}
+                    {{form.media_file}}
+                </div>        
+                <div class="mb-2">
+                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{form.description.label}}</label>
+                    {% if form.description.errors %}                                    
+                        <span class='text-red-600 text-xs'>{{form.description.errors}}</span>
+                    {%endif%}
+                    {{form.description}}
+                </div>        
+        
+                <div class="flex items-center space-x-4 justify-center">
+                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        {% trans 'create'|title %}
+                    </button>
+                    <a href="{% url 'posts:home_login_posts' %}" class="text-white inline-flex items-center border border-red-700 bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:hover:bg-red-800 dark:focus:ring-red-900"> 
+                        {% trans 'cancel'|title %}
+                    <a>
+                </div>
+            </form>
+
+        </div>
     </div>
-</div>
 
 {% endblock content %}
